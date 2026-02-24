@@ -1,6 +1,6 @@
-# Nython
+# N-Python
 
-**Nython** is a collection of Python libraries designed to **speed up Python coding**, reduce repetitive tasks, and make development more efficient. Each library in Nython focuses on solving a common pain point in Python programming, from configuration management to automation and beyond.
+**N-Python** is a collection of Python libraries designed to **speed up Python coding**, reduce repetitive tasks, and make development more efficient. Each library in Nython focuses on solving a common pain point in Python programming, from configuration management to automation and beyond.
 
 This repository will grow over time as more libraries are added.
 
