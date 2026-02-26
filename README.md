@@ -68,7 +68,7 @@ save()
 print("Logs saved to logs.txt")
 ```
 
-### 3.StrictPy
+### 3. StrictPy
 `StrictPy` is a **runtime enforcement library* that makes Python’s type hints actually execute as contracts. By decorating functions or classes with @strict, it validates arguments, return values, and annotated attributes during execution, raising clear errors when types don’t match.
 
 
