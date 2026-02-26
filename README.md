@@ -67,3 +67,38 @@ if timestamps:
 save()
 print("Logs saved to logs.txt")
 ```
+
+### 3.StrictPy
+`StrictPy` is a **runtime enforcement library* that makes Python’s type hints actually execute as contracts. By decorating functions or classes with @strict, it validates arguments, return values, and annotated attributes during execution, raising clear errors when types don’t match.
+
+
+### Features
+- Runtime Function Validation – Enforces parameter and return type hints during execution.
+- Nested Generic Support – Validates list[int], dict[str, float], tuple[int, ...], set[str], including deep nesting.
+- Union & Optional Handling – Supports Union and Optional types with proper branch validation.
+- Class Attribute Enforcement – Ensures annotated class attributes maintain correct types when assigned.
+- Dataclass Integration – Automatically validates annotated dataclass fields after initialization.
+- Rich Error Messages – Provides detailed type mismatch reports including parameter name, expected type, actual type, and value.
+
+#### Example Usage
+```python
+from strictpy import strict
+from typing import Optional
+
+
+@strict
+def greet(name: str, age: Optional[int]) -> str:
+    if age is None:
+        return f"Hello {name}"
+    return f"Hello {name}, age {age}"
+
+
+# ✅ Valid
+print(greet("Alice", 25))
+print(greet("Bob", None))
+
+
+# ❌ Invalid
+greet(123, 25)      # name must be str
+greet("Eve", "20")  # age must be int or None
+```
